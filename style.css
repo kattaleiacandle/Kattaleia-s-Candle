@@ -1099,3 +1099,234 @@ p {
     padding: 25px;
   }
 }
+
+/* =========================================
+   SHOP TOOLBAR
+========================================= */
+
+.shop-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 190px 170px;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.shop-search,
+.shop-select {
+  position: relative;
+}
+
+.shop-search i {
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-soft);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.shop-search input,
+.shop-select select {
+  width: 100%;
+  height: 52px;
+  border: 1px solid rgba(61, 46, 40, 0.14);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.shop-search input {
+  padding: 0 18px 0 45px;
+}
+
+.shop-select select {
+  padding: 0 40px 0 16px;
+  appearance: none;
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--ink-soft) 50%),
+    linear-gradient(135deg, var(--ink-soft) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 22px,
+    calc(100% - 13px) 22px;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.shop-search input::placeholder {
+  color: #9a8b82;
+}
+
+.shop-search input:focus,
+.shop-select select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(217, 167, 90, 0.12);
+}
+
+.shop-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(61, 46, 40, 0.09);
+}
+
+.shop-meta p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================================
+   SHOP PRODUCT CARDS
+========================================= */
+
+#productGrid .card {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid rgba(61, 46, 40, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(61, 46, 40, 0.05);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#productGrid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(61, 46, 40, 0.09);
+}
+
+#productGrid .card-media {
+  overflow: hidden;
+  background: var(--cream-deep);
+}
+
+#productGrid .card-media .ph {
+  border-radius: 0;
+}
+
+#productGrid .card-body {
+  padding: 20px;
+}
+
+#productGrid .card-body h3 {
+  margin: 7px 0 5px;
+  font-family: var(--display);
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+#productGrid .card-body p {
+  margin: 0 0 18px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+#productGrid .card-tag {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   LOAD MORE
+========================================= */
+
+#loadMoreWrap {
+  margin-top: 42px !important;
+  padding-top: 5px;
+}
+
+#loadMoreBtn {
+  min-width: 170px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer h3 {
+  margin: 0 0 18px;
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--ink-soft);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--amber);
+}
+
+
+/* =========================================
+   MOBILE SHOP
+========================================= */
+
+@media (max-width: 900px) {
+
+  .shop-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .shop-search {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+@media (max-width: 620px) {
+
+  .shop-toolbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .shop-search {
+    grid-column: auto;
+  }
+
+  .shop-search input,
+  .shop-select select {
+    height: 50px;
+  }
+
+  .shop-meta {
+    margin-bottom: 22px;
+  }
+
+}
