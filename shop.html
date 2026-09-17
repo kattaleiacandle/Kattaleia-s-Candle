@@ -99,84 +99,86 @@
     </section>
 
 
-    <!-- =========================
-         SHOP
-    ========================== -->
-    <section class="section">
-      <div class="container">
+   
+<!-- =========================
+     SHOP
+========================== -->
+<section class="section">
+  <div class="container">
 
-        <!-- Shop Controls -->
-        <div class="shop-controls">
+    <!-- Shop Controls -->
+    <div class="shop-toolbar">
 
-          <!-- Search -->
-          <div class="shop-search">
+      <!-- Search -->
+      <div class="shop-search">
 
-            <label for="productSearch" class="sr-only">
-              Search candles
-            </label>
+        <label for="productSearch" class="sr-only">
+          Search candles
+        </label>
 
-            <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
 
-            <input
-              type="search"
-              id="productSearch"
-              placeholder="Search candles..."
-              autocomplete="off"
-            >
+        <input
+          type="search"
+          id="productSearch"
+          placeholder="Search candles..."
+          autocomplete="off"
+        >
 
-          </div>
-
-
-          <!-- Category Filter -->
-          <div class="shop-filter">
-
-            <label for="categoryFilter" class="sr-only">
-              Filter by category
-            </label>
-
-            <select id="categoryFilter">
-              <option value="all">All Candles</option>
-            </select>
-
-          </div>
+      </div>
 
 
-          <!-- Sort -->
-          <div class="shop-sort">
+      <!-- Category Filter -->
+      <div class="shop-select">
 
-            <label for="sortProducts" class="sr-only">
-              Sort candles
-            </label>
+        <label for="categoryFilter" class="sr-only">
+          Filter by category
+        </label>
 
-            <select id="sortProducts">
+        <select id="categoryFilter">
+          <option value="all">All Candles</option>
+        </select>
 
-              <option value="default">
-                Featured
-              </option>
-
-              <option value="az">
-                Name A–Z
-              </option>
-
-              <option value="za">
-                Name Z–A
-              </option>
-
-            </select>
-
-          </div>
-
-        </div>
+      </div>
 
 
-        <!-- Product Count -->
-        <div class="shop-meta">
+      <!-- Sort -->
+      <div class="shop-select">
 
-          <p id="productCount">
-            Showing 0 candles
-          </p>
+        <label for="sortProducts" class="sr-only">
+          Sort candles
+        </label>
 
-        </div>
+        <select id="sortProducts">
+
+          <option value="default">
+            Featured
+          </option>
+
+          <option value="az">
+            Name A–Z
+          </option>
+
+          <option value="za">
+            Name Z–A
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <!-- Product Count -->
+    <div class="shop-meta">
+
+      <p id="productCount">
+        Showing 0 candles
+      </p>
+
+    </div>
+       
 
 
         <!-- =========================
