@@ -274,57 +274,94 @@
 
 
     /* =========================
-       PAGE HERO
-    ========================== */
+   PAGE HERO
+========================== */
 
-    .page-hero {
-      padding: 100px 0 75px;
+.page-hero {
+  position: relative;
+  min-height: 430px;
 
-      text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-      background:
-        linear-gradient(
-          180deg,
-          var(--cream-deep),
-          var(--cream)
-        );
-    }
+  padding: 100px 0 75px;
 
+  text-align: center;
 
-    .eyebrow {
-      margin-bottom: 12px;
+  overflow: hidden;
 
-      color: var(--amber);
-
-      font-size: 12px;
-      font-weight: 600;
-
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
+  background:
+    linear-gradient(
+      rgba(251, 247, 240, 0.62),
+      rgba(251, 247, 240, 0.62)
+    ),
+    url("images/shop-hero.jpg") center / cover no-repeat;
+}
 
 
-    .page-hero h1 {
-      margin-bottom: 15px;
+/* Soft blur layer */
+.page-hero::before {
+  content: "";
 
-      font-family: var(--font-display);
+  position: absolute;
+  inset: -20px;
 
-      font-size: clamp(44px, 7vw, 72px);
-      font-weight: 500;
+  background:
+    url("images/shop-hero.jpg")
+    center / cover no-repeat;
 
-      line-height: 1.05;
-    }
+  filter: blur(6px);
+
+  opacity: 0.45;
+
+  transform: scale(1.05);
+
+  z-index: 0;
+}
 
 
-    .page-intro {
-      max-width: 620px;
+/* Keep hero text above the image */
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
 
-      margin: 0 auto;
 
-      color: var(--ink-soft);
+.eyebrow {
+  margin-bottom: 12px;
 
-      font-size: 16px;
-    }
+  color: var(--amber);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+
+.page-hero h1 {
+  margin-bottom: 15px;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(44px, 7vw, 72px);
+  font-weight: 500;
+
+  line-height: 1.05;
+}
+
+
+.page-intro {
+  max-width: 620px;
+
+  margin: 0 auto;
+
+  color: var(--ink-soft);
+
+  font-size: 16px;
+}
 
 
     /* =========================
