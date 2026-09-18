@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Shop | Kattaleia’s Candles</title>
+
+  <meta
+    name="description"
+    content="Explore the candle collection from Kattaleia’s Candles."
+  >
+
+
+  <!-- =========================
+       FONTS
+  ========================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =========================
+       FONT AWESOME
+  ========================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+
+  <!-- =========================
+       ALL SHOP CSS
+  ========================== -->
+
+  <style>
+
+    :root {
+      --cream: #FBF7F0;
+      --cream-deep: #F4ECDF;
+      --blush: #F3E4D3;
+      --sand: #EADBC6;
+      --ink: #3D2E28;
+      --ink-soft: #6E5B50;
+      --amber: #B4762B;
+      --amber-deep: #96591D;
+      --gold: #D9A75A;
+      --white: #FFFFFF;
+
+      --font-display:
+        "Cormorant Garamond",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      --font-body:
+        "Jost",
+        "Segoe UI",
+        Tahoma,
+        sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+
+      --shadow-sm:
+        0 8px 24px rgba(61, 46, 40, 0.08);
+
+      --shadow-md:
+        0 16px 40px rgba(61, 46, 40, 0.12);
+
+      --max-width: 1180px;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.7;
+    }
+
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--max-width)
+      );
+
+      margin-inline: auto;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background:
+        rgba(251, 247, 240, 0.96);
+
+      border-bottom:
+        1px solid rgba(61, 46, 40, 0.08);
+
+      backdrop-filter: blur(12px);
+    }
+
+
+    .nav-wrap {
+      min-height: 84px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+
+      white-space: nowrap;
+    }
+
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--amber);
+      border-radius: 50%;
+
+      color: var(--amber);
+
+      font-family: var(--font-display);
+      font-size: 21px;
+    }
+
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+
+    .main-nav > a:not(.nav-cta) {
+      position: relative;
+
+      color: var(--ink-soft);
+
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+
+    .main-nav > a:not(.nav-cta)::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--amber);
+
+      transition: width 0.25s ease;
+    }
+
+
+    .main-nav > a:not(.nav-cta):hover::after,
+    .main-nav > a.active::after {
+      width: 100%;
+    }
+
+
+    .main-nav > a.active {
+      color: var(--ink);
+    }
+
+
+    .nav-cta {
+      padding: 11px 18px;
+
+      border-radius: 999px;
+
+      background: var(--ink);
+      color: var(--white);
+
+      font-size: 13px;
+      font-weight: 500;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+
+    .nav-cta:hover {
+      background: var(--amber-deep);
+      transform: translateY(-2px);
+    }
+
+
+    .nav-toggle {
+      display: none;
+
+      border: 0;
+      background: transparent;
+
+      color: var(--ink);
+
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       PAGE HERO
+    ========================== */
+
+    .page-hero {
+      padding: 100px 0 75px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          180deg,
+          var(--cream-deep),
+          var(--cream)
+        );
+    }
+
+
+    .eyebrow {
+      margin-bottom: 12px;
+
+      color: var(--amber);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+
+    .page-hero h1 {
+      margin-bottom: 15px;
+
+      font-family: var(--font-display);
+
+      font-size: clamp(44px, 7vw, 72px);
+      font-weight: 500;
+
+      line-height: 1.05;
+    }
+
+
+    .page-intro {
+      max-width: 620px;
+
+      margin: 0 auto;
+
+      color: var(--ink-soft);
+
+      font-size: 16px;
+    }
+
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    .section {
+      padding: 80px 0;
+    }
+
+
+    /* =========================
+       SHOP TOOLBAR
+    ========================== */
+
+    .shop-toolbar {
+      display: grid;
+
+      grid-template-columns:
+        minmax(260px, 1fr)
+        190px
+        170px;
+
+      gap: 12px;
+
+      align-items: center;
+
+      margin-bottom: 20px;
+    }
+
+
+    .shop-search {
+      position: relative;
+    }
+
+
+    .shop-search i {
+      position: absolute;
+
+      left: 17px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: var(--ink-soft);
+
+      pointer-events: none;
+    }
+
+
+    .shop-search input,
+    .shop-select select {
+      width: 100%;
+      height: 52px;
+
+      padding: 0 16px;
+
+      border:
+        1px solid rgba(61, 46, 40, 0.14);
+
+      border-radius: var(--radius-sm);
+
+      background: var(--white);
+      color: var(--ink);
+
+      outline: none;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .shop-search input {
+      padding-left: 48px;
+    }
+
+
+    .shop-search input:focus,
+    .shop-select select:focus {
+      border-color: var(--amber);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(180, 118, 43, 0.12);
+    }
+
+
+    .shop-meta {
+      margin-bottom: 30px;
+    }
+
+
+    .shop-meta p {
+      color: var(--ink-soft);
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       PRODUCT GRID
+    ========================== */
+
+    .product-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 28px;
+    }
+
+
+    /* =========================
+       PRODUCT CARD
+    ========================== */
+
+    .product-card {
+      overflow: hidden;
+
+      background: var(--white);
+
+      border:
+        1px solid rgba(61, 46, 40, 0.08);
+
+      border-radius: var(--radius-md);
+
+      box-shadow: var(--shadow-sm);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+
+    .product-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow: var(--shadow-md);
+    }
+
+
+    .product-card-image {
+      position: relative;
+
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+
+      background: var(--cream-deep);
+    }
+
+
+    .product-card-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.4s ease;
+    }
+
+
+    .product-card:hover
+    .product-card-image img {
+      transform: scale(1.04);
+    }
+
+
+    .product-card-body {
+      padding: 22px;
+    }
+
+
+    .product-card-category {
+      margin-bottom: 5px;
+
+      color: var(--amber);
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+
+    .product-card h3 {
+      margin-bottom: 5px;
+
+      font-family: var(--font-display);
+
+      font-size: 25px;
+      font-weight: 600;
+
+      line-height: 1.1;
+    }
+
+
+    .product-card-scent {
+      margin-bottom: 18px;
+
+      color: var(--ink-soft);
+
+      font-size: 14px;
+    }
+
+
+    .product-card-link {
+      display: inline-flex;
+
+      align-items: center;
+      gap: 8px;
+
+      color: var(--amber-deep);
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+
+    .product-card-link i {
+      transition:
+        transform 0.2s ease;
+    }
+
+
+    .product-card-link:hover i {
+      transform: translateX(4px);
+    }
+
+
+    /* =========================
+       LOAD MORE
+    ========================== */
+
+    .load-more-wrap {
+      display: flex;
+
+      justify-content: center;
+
+      margin-top: 50px;
+    }
+
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 48px;
+
+      padding: 0 24px;
+
+      border: 0;
+      border-radius: 999px;
+
+      cursor: pointer;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+
+    .btn--primary {
+      background: var(--ink);
+      color: var(--white);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+
+    .btn--primary:hover {
+      background: var(--amber-deep);
+      transform: translateY(-2px);
+    }
+
+
+    .no-results {
+      display: none;
+
+      padding: 40px;
+
+      text-align: center;
+
+      color: var(--ink-soft);
+
+      background: var(--cream-deep);
+
+      border-radius: var(--radius-md);
+    }
+
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta-band {
+      padding: 70px 0;
+
+      background: var(--ink);
+
+      color: var(--white);
+    }
+
+
+    .cta-band-inner {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+
+    .cta-band .eyebrow {
+      color: var(--gold);
+    }
+
+
+    .cta-band h2 {
+      margin-bottom: 10px;
+
+      font-family: var(--font-display);
+
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 500;
+
+      line-height: 1.1;
+    }
+
+
+    .cta-band p:not(.eyebrow) {
+      max-width: 600px;
+
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+
+    .btn--light {
+      flex-shrink: 0;
+
+      background: var(--white);
+      color: var(--ink);
+    }
+
+
+    .btn--light:hover {
+      background: var(--cream-deep);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .site-footer {
+      padding: 70px 0 25px;
+
+      background: var(--ink);
+
+      color: var(--white);
+
+      border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+    }
+
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+      gap: 50px;
+    }
+
+
+    .site-footer .brand {
+      color: var(--white);
+    }
+
+
+    .site-footer .brand-mark {
+      color: var(--gold);
+
+      border-color: var(--gold);
+    }
+
+
+    .footer-tag {
+      max-width: 310px;
+
+      margin-top: 18px;
+
+      color:
+        rgba(255, 255, 255, 0.65);
+
+      font-size: 14px;
+    }
+
+
+    .site-footer h3 {
+      margin-bottom: 18px;
+
+      color: var(--white);
+
+      font-family: var(--font-body);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+
+    .footer-links {
+      list-style: none;
+    }
+
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+
+    .footer-links a {
+      color:
+        rgba(255, 255, 255, 0.68);
+
+      font-size: 14px;
+
+      transition:
+        color 0.2s ease;
+    }
+
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+
+    .social-row {
+      display: flex;
+
+      gap: 10px;
+
+      margin-top: 24px;
+    }
+
+
+    .social-row a {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+      border-radius: 50%;
+
+      color:
+        rgba(255, 255, 255, 0.8);
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+
+    .social-row a:hover {
+      background: var(--white);
+      color: var(--ink);
+    }
+
+
+    .footer-bottom {
+      margin-top: 55px;
+      padding-top: 22px;
+
+      border-top:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+    }
+
+
+    .footer-bottom p {
+      color:
+        rgba(255, 255, 255, 0.5);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       SCREEN READER
+    ========================== */
+
+    .sr-only {
+      position: absolute;
+
+      width: 1px;
+      height: 1px;
+
+      padding: 0;
+      margin: -1px;
+
+      overflow: hidden;
+
+      clip: rect(0, 0, 0, 0);
+
+      white-space: nowrap;
+
+      border: 0;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width: 1000px) {
+
+      .product-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE NAV
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .nav-toggle {
+        display: block;
+      }
+
+
+      .main-nav {
+        position: absolute;
+
+        top: 84px;
+        left: 20px;
+        right: 20px;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 18px;
+
+        background: var(--white);
+
+        border-radius: var(--radius-md);
+
+        box-shadow: var(--shadow-md);
+      }
+
+
+      .main-nav.is-open {
+        display: flex;
+      }
+
+
+      .main-nav > a {
+        padding: 12px 4px;
+      }
+
+
+      .nav-cta {
+        text-align: center;
+
+        margin-top: 8px;
+      }
+
+
+      .shop-toolbar {
+        grid-template-columns: 1fr 1fr;
+      }
+
+
+      .shop-search {
+        grid-column: 1 / -1;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 620px) {
+
+      .container {
+        width: min(
+          calc(100% - 28px),
+          var(--max-width)
+        );
+      }
+
+
+      .page-hero {
+        padding: 70px 0 55px;
+      }
+
+
+      .section {
+        padding: 55px 0;
+      }
+
+
+      .shop-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+
+      .shop-search {
+        grid-column: auto;
+      }
+
+
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 14px;
+      }
+
+
+      .product-card-body {
+        padding: 16px;
+      }
+
+
+      .product-card h3 {
+        font-size: 21px;
+      }
+
+
+      .cta-band-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+    }
+
+
+    @media (max-width: 430px) {
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==================================================
+       NAVBAR
+  ================================================== -->
+
+  <header class="site-header">
+
+    <div class="container nav-wrap">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-mark">
+          K
+        </span>
+
+        <span>
+          Kattaleia’s Candles
+        </span>
+
+      </a>
+
+
+      <button
+        class="nav-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        type="button"
+      >
+        ☰
+      </button>
+
+
+      <nav class="main-nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a
+          href="shop.html"
+          class="active"
+        >
+          Shop
+        </a>
+
+        <a href="about.html">
+          About Us
+        </a>
+
+        <a href="events.html">
+          Events
+        </a>
+
+        <a href="news.html">
+          News
+        </a>
+
+        <a
+          href="WHATSAPP_LINK_HERE"
+          class="nav-cta"
+          target="_blank"
+          rel="noopener"
+        >
+          Order on WhatsApp
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==================================================
+       PAGE
+  ================================================== -->
+
+  <main>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="page-hero">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          Our Collection
+        </p>
+
+        <h1>
+          Shop Our Candles
+        </h1>
+
+        <p class="page-intro">
+          Discover handmade candles created with warmth,
+          care, and attention to detail.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SHOP
+    ========================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+
+        <!-- =========================
+             SEARCH / FILTERS
+        ========================== -->
+
+        <div class="shop-toolbar">
+
+
+          <div class="shop-search">
+
+            <label
+              for="productSearch"
+              class="sr-only"
+            >
+              Search candles
+            </label>
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="search"
+              id="productSearch"
+              placeholder="Search candles..."
+              autocomplete="off"
+            >
+
+          </div>
+
+
+          <div class="shop-select">
+
+            <label
+              for="categoryFilter"
+              class="sr-only"
+            >
+              Filter by category
+            </label>
+
+            <select id="categoryFilter">
+
+              <option value="all">
+                All Candles
+              </option>
+
+              <option value="Classic">
+                Classic
+              </option>
+
+              <option value="Floral">
+                Floral
+              </option>
+
+              <option value="Seasonal">
+                Seasonal
+              </option>
+
+              <option value="Custom">
+                Custom
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="shop-select">
+
+            <label
+              for="sortProducts"
+              class="sr-only"
+            >
+              Sort candles
+            </label>
+
+            <select id="sortProducts">
+
+              <option value="default">
+                Featured
+              </option>
+
+              <option value="az">
+                Name A–Z
+              </option>
+
+              <option value="za">
+                Name Z–A
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="shop-meta">
+
+          <p id="productCount">
+            Showing 20 candles
+          </p>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             CANDLE PRODUCTS
+             
+             IMPORTANT:
+             Every candle is kept separate.
+             
+             Image:
+             images/candle1.png
+             
+             Name:
+             ADD CANDLE NAME HERE
+             
+             Scent:
+             ADD SCENT HERE
+             
+             Category:
+             ADD CATEGORY HERE
+        ================================================== -->
+
+        <div
+          class="product-grid"
+          id="productGrid"
+        >
+
+
+          <!-- =========================
+               CANDLE 1
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-1"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle1.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 2
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-2"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle2.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 3
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-3"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle3.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 4
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-4"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle4.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 5
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-5"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle5.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 6
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-6"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle6.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 7
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-7"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle7.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 8
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-8"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle8.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 9
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-9"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle9.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =========================
+               CANDLE 10
+          ========================== -->
+
+          <article
+            class="product-card"
+            id="candle-10"
+          >
+
+            <div class="product-card-image">
+
+              <img
+                src="images/candle10.png"
+                alt="ADD CANDLE NAME HERE"
+              >
+
+            </div>
+
+            <div class="product-card-body">
+
+              <p class="product-card-category">
+                ADD CATEGORY HERE
+              </p>
+
+              <h3>
+                ADD CANDLE NAME HERE
+              </h3>
+
+              <p class="product-card-scent">
+                ADD SCENT HERE
+              </p>
+
+              <a
+                href="WHATSAPP_LINK_HERE"
+                class="product-card-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Ask About This Candle
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!--
+          ==================================================
+          CANDLES 11–50
+          ==================================================
+
+          Follow the exact same clean structure.
+
+          candle11.png
+          candle12.png
+          candle13.png
+          ...
+          candle50.png
+
+          Each candle gets:
+
+          id="candle-11"
+          id="candle-12"
+          id="candle-13"
+
+          etc.
+
+          ==================================================
+          -->
+
+
+        </div>
+
+
+
+        <!-- =========================
+             NO RESULTS
+        ========================== -->
+
+        <div
+          class="no-results"
+          id="noResults"
+        >
+
+          <strong>
+            No candles found.
+          </strong>
+
+          <br>
+
+          Try another search or category.
+
+        </div>
+
+
+
+        <!-- =========================
+             LOAD MORE
+        ========================== -->
+
+        <div
+          class="load-more-wrap"
+          id="loadMoreWrap"
+        >
+
+          <button
+            class="btn btn--primary"
+            id="loadMoreBtn"
+            type="button"
+          >
+            Load More
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta-band">
+
+      <div class="container">
+
+        <div class="cta-band-inner">
+
+          <div>
+
+            <p class="eyebrow">
+              Find Your Favorite
+            </p>
+
+            <h2>
+              Ready to choose your candle?
+            </h2>
+
+            <p>
+              Contact us to ask about availability,
+              scents, custom options, and current pricing.
+            </p>
+
+          </div>
+
+
+          <a
+            href="WHATSAPP_LINK_HERE"
+            class="btn btn--light"
+            target="_blank"
+            rel="noopener"
+          >
+            Order on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+      <!-- BRAND -->
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <span class="brand-mark">
+            K
+          </span>
+
+          <span>
+            Kattaleia’s Candles
+          </span>
+
+        </a>
+
+
+        <p class="footer-tag">
+          Handmade candles created with warmth,
+          care, and attention to detail.
+        </p>
+
+
+        <div class="social-row">
+
+          <a
+            href="INSTAGRAM_LINK_HERE"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+
+          <a
+            href="TIKTOK_LINK_HERE"
+            target="_blank"
+            rel="noopener"
+            aria-label="TikTok"
+          >
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+
+          <a
+            href="WHATSAPP_LINK_HERE"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- EXPLORE -->
+
+      <div>
+
+        <h3>
+          Explore
+        </h3>
+
+        <ul class="footer-links">
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="shop.html">
+              Shop
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="events.html">
+              Events
+            </a>
+          </li>
+
+          <li>
+            <a href="news.html">
+              News
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- ORDERS -->
+
+      <div>
+
+        <h3>
+          Orders & Support
+        </h3>
+
+        <ul class="footer-links">
+
+          <li>
+            <a
+              href="WHATSAPP_LINK_HERE"
+              target="_blank"
+              rel="noopener"
+            >
+              Order on WhatsApp
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:EMAIL_HERE">
+              Email Us
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:PHONE_NUMBER_HERE">
+              Call Us
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- LEGAL -->
+
+      <div>
+
+        <h3>
+          Legal
+        </h3>
+
+        <ul class="footer-links">
+
+          <li>
+            <a href="privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+          <li>
+            <a href="terms.html">
+              Terms & Conditions
+            </a>
+          </li>
+
+          <li>
+            <a href="returns.html">
+              Return Policy
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+      <p>
+        ©
+        <span id="currentYear"></span>
+        Kattaleia’s Candles.
+        All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ==================================================
+       ALL SHOP JAVASCRIPT
+  ================================================== -->
+
+  <script>
+
+    /* =========================
+       BASIC SETTINGS
+    ========================== */
+
+    const PRODUCTS_PER_PAGE = 20;
+
+    let currentPage = 1;
+
+
+    /* =========================
+       ELEMENTS
+    ========================== */
+
+    const productGrid =
+      document.getElementById("productGrid");
+
+    const productSearch =
+      document.getElementById("productSearch");
+
+    const categoryFilter =
+      document.getElementById("categoryFilter");
+
+    const sortProducts =
+      document.getElementById("sortProducts");
+
+    const productCount =
+      document.getElementById("productCount");
+
+    const noResults =
+      document.getElementById("noResults");
+
+    const loadMoreBtn =
+      document.getElementById("loadMoreBtn");
+
+    const loadMoreWrap =
+      document.getElementById("loadMoreWrap");
+
+
+    /* =========================
+       ALL PRODUCT CARDS
+    ========================== */
+
+    let allCards = [
+      ...document.querySelectorAll(".product-card")
+    ];
+
+
+    /* =========================
+       CATEGORIES
+    ========================== */
+
+    const categories = [
+      ...new Set(
+        allCards.map(card =>
+          card
+            .querySelector(".product-card-category")
+            .textContent
+            .trim()
+        )
+      )
+    ];
+
+
+    categories.forEach(category => {
+
+      if (
+        category === "" ||
+        category === "ADD CATEGORY HERE"
+      ) {
+        return;
+      }
+
+      const option =
+        document.createElement("option");
+
+      option.value = category;
+
+      option.textContent = category;
+
+      categoryFilter.appendChild(option);
+
+    });
+
+
+    /* =========================
+       SHOW PRODUCTS
+    ========================== */
+
+    function updateProducts() {
+
+      const search =
+        productSearch.value
+          .trim()
+          .toLowerCase();
+
+      const selectedCategory =
+        categoryFilter.value;
+
+
+      let matchingCards =
+        allCards.filter(card => {
+
+          const name =
+            card
+              .querySelector("h3")
+              .textContent
+              .trim()
+              .toLowerCase();
+
+
+          const scent =
+            card
+              .querySelector(".product-card-scent")
+              .textContent
+              .trim()
+              .toLowerCase();
+
+
+          const category =
+            card
+              .querySelector(".product-card-category")
+              .textContent
+              .trim();
+
+
+          const matchesSearch =
+            name.includes(search) ||
+            scent.includes(search) ||
+            category.toLowerCase().includes(search);
+
+
+          const matchesCategory =
+            selectedCategory === "all" ||
+            category === selectedCategory;
+
+
+          return (
+            matchesSearch &&
+            matchesCategory
+          );
+
+        });
+
+
+      /* =========================
+         SORT
+      ========================== */
+
+      if (
+        sortProducts.value === "az"
+      ) {
+
+        matchingCards.sort((a, b) => {
+
+          const nameA =
+            a.querySelector("h3")
+              .textContent
+              .trim();
+
+          const nameB =
+            b.querySelector("h3")
+              .textContent
+              .trim();
+
+          return nameA.localeCompare(nameB);
+
+        });
+
+      }
+
+
+      if (
+        sortProducts.value === "za"
+      ) {
+
+        matchingCards.sort((a, b) => {
+
+          const nameA =
+            a.querySelector("h3")
+              .textContent
+              .trim();
+
+          const nameB =
+            b.querySelector("h3")
+              .textContent
+              .trim();
+
+          return nameB.localeCompare(nameA);
+
+        });
+
+      }
+
+
+      /* =========================
+         PAGINATION
+      ========================== */
+
+      const visibleCount =
+        currentPage *
+        PRODUCTS_PER_PAGE;
+
+
+      allCards.forEach(card => {
+
+        card.style.display = "none";
+
+      });
+
+
+      matchingCards
+        .slice(0, visibleCount)
+        .forEach(card => {
+
+          card.style.display = "";
+
+        });
+
+
+      /* =========================
+         COUNT
+      ========================== */
+
+      const showing =
+        Math.min(
+          visibleCount,
+          matchingCards.length
+        );
+
+
+      productCount.textContent =
+        `Showing ${showing} of ${matchingCards.length} candles`;
+
+
+      /* =========================
+         NO RESULTS
+      ========================== */
+
+      if (
+        matchingCards.length === 0
+      ) {
+
+        noResults.style.display =
+          "block";
+
+      } else {
+
+        noResults.style.display =
+          "none";
+
+      }
+
+
+      /* =========================
+         LOAD MORE
+      ========================== */
+
+      if (
+        visibleCount <
+        matchingCards.length
+      ) {
+
+        loadMoreWrap.style.display =
+          "flex";
+
+      } else {
+
+        loadMoreWrap.style.display =
+          "none";
+
+      }
+
+    }
+
+
+    /* =========================
+       SEARCH
+    ========================== */
+
+    productSearch.addEventListener(
+      "input",
+      () => {
+
+        currentPage = 1;
+
+        updateProducts();
+
+      }
+    );
+
+
+    /* =========================
+       CATEGORY
+    ========================== */
+
+    categoryFilter.addEventListener(
+      "change",
+      () => {
+
+        currentPage = 1;
+
+        updateProducts();
+
+      }
+    );
+
+
+    /* =========================
+       SORT
+    ========================== */
+
+    sortProducts.addEventListener(
+      "change",
+      () => {
+
+        currentPage = 1;
+
+        updateProducts();
+
+      }
+    );
+
+
+    /* =========================
+       LOAD MORE
+    ========================== */
+
+    loadMoreBtn.addEventListener(
+      "click",
+      () => {
+
+        currentPage++;
+
+        updateProducts();
+
+      }
+    );
+
+
+    /* =========================
+       MOBILE NAV
+    ========================== */
+
+    const navToggle =
+      document.querySelector(".nav-toggle");
+
+    const mainNav =
+      document.querySelector(".main-nav");
+
+
+    navToggle.addEventListener(
+      "click",
+      () => {
+
+        const isOpen =
+          mainNav.classList.toggle(
+            "is-open"
+          );
+
+        navToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+      }
+    );
+
+
+    /* =========================
+       FOOTER YEAR
+    ========================== */
+
+    document.getElementById(
+      "currentYear"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    /* =========================
+       INITIAL LOAD
+    ========================== */
+
+    updateProducts();
+
+  </script>
+
+
+</body>
+
+</html>
