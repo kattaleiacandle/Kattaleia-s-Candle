@@ -285,46 +285,43 @@
   align-items: center;
   justify-content: center;
 
-  padding: 100px 0 75px;
-
-  text-align: center;
-
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      rgba(251, 247, 240, 0.62),
-      rgba(251, 247, 240, 0.62)
-    ),
-    url("shop-hero.jpeg") center / cover no-repeat;
+  text-align: center;
 }
 
 
-/* Soft blur layer */
-.page-hero::before {
-  content: "";
-
+/* Background image */
+.hero-background {
   position: absolute;
-  inset: -20px;
+  inset: -10px;
 
-  background:
-    url("shop-hero.jpeg")
-    center / cover no-repeat;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
 
-  filter: blur(6px);
+  object-fit: cover;
 
-  opacity: 0.45;
-
-  transform: scale(1.05);
+  filter: blur(5px);
 
   z-index: 0;
 }
 
 
-/* Keep hero text above the image */
-.page-hero .container {
-  position: relative;
+/* Transparent cream overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(251, 247, 240, 0.62);
+
   z-index: 1;
+}
+
+
+/* Text */
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -362,7 +359,6 @@
 
   font-size: 16px;
 }
-
 
     /* =========================
        SECTION
@@ -1143,27 +1139,28 @@
          HERO
     ========================== -->
 
-    <section class="page-hero">
+   <section class="page-hero">
 
-      <div class="container">
+  <img
+    src="images/shop-hero.jpg"
+    alt="Kattaleia's Candles"
+    class="hero-background"
+  >
 
-        <p class="eyebrow">
-          Our Collection
-        </p>
+  <div class="hero-overlay"></div>
 
-        <h1>
-          Shop Our Candles
-        </h1>
+  <div class="container hero-content">
+    <p class="eyebrow">Kattaleia’s Candles</p>
 
-        <p class="page-intro">
-          Discover handmade candles created with warmth,
-          care, and attention to detail.
-        </p>
+    <h1>Our Collection</h1>
 
-      </div>
+    <p class="page-intro">
+      Discover our handmade candles, created with warmth, care,
+      and attention to detail.
+    </p>
+  </div>
 
-    </section>
-
+</section>
 
 
     <!-- =========================
